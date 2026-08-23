@@ -45,19 +45,42 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-23T09:35:33.015Z  
+**Runtime:** 660 ms (beats 34.25%)  
+**Memory:** 22.2 MB (beats 82.04%)  
+**Submitted:** 2026-08-23T09:35:40.237Z  
 
 ```py
-                    right-=1
-                    while left<right and nums[left]==nums[left-1]:
-                        left+=1
-                    while left<right and nums[right]==nums[right+1]:
-                elif s<0:
-                        right-=1
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        r=[]
+        nums.sort()
+        s=0
+        for i in range(len(nums)):
+            if i>0 and nums[i]==nums[i-1]:
+                continue
+            left=i+1
+            right=len(nums)-1
+            while left<right:
+                s=nums[i]+nums[left]+nums[right]
+                if s==0:
+                    r.append([nums[i],nums[left],nums[right]])
+                    left+=1
+                    right-=1
+                    while left<right and nums[left]==nums[left-1]:
+                        left+=1
+                    while left<right and nums[right]==nums[right+1]:
+                        right-=1
+
+                elif s<0:
+                    left+=1
+                else:
+                    right-=1
+        return r
+                
+        
 
 
+        
 ```
 
 ---
