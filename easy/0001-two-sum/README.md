@@ -46,9 +46,9 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comp
 ## Solution
 
 **Language:** Python  
-**Runtime:** 1866 ms (beats 8.35%)  
-**Memory:** 19.7 MB (beats 95.02%)  
-**Submitted:** 2026-08-23T09:00:47.302Z  
+**Runtime:** 2121 ms (beats 5.67%)  
+**Memory:** 20 MB (beats 65.86%)  
+**Submitted:** 2026-08-23T09:01:18.501Z  
 
 ```py
 class Solution:
