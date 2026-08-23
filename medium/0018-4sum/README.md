@@ -38,42 +38,41 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-08-23T10:12:21.862Z  
+**Runtime:** 400 ms (beats 49.61%)  
+**Memory:** 19.2 MB (beats 86.13%)  
+**Submitted:** 2026-08-23T10:12:28.913Z  
 
 ```py
 class Solution:
-    def threeSum(self, nums: list[int]) -> list[list[int]]:
-        r=[]
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
-        s=0
+        r=[]
         for i in range(len(nums)):
-            if i>0 and nums[i]==nums[i-1]:
+            if i>0 and  nums[i]==nums[i-1]:
                 continue
-            left=i+1
-            right=len(nums)-1
-            while left<right:
-                s=nums[i]+nums[left]+nums[right]
-                if s==0:
-                    r.append([nums[i],nums[left],nums[right]])
-                    left+=1
-                    right-=1
-                    while left<right and nums[left]==nums[left-1]:
+            for j in range(i+1,len(nums)):
+                if j>i+1 and nums[j]==nums[j-1]:
+                    continue
+                left=j+1
+                right=len(nums)-1
+                while left<right:
+                    s=nums[i]+nums[j]+nums[left]+nums[right]
+                    if s==target:
+                        r.append([nums[i],nums[j],nums[left],nums[right]])
                         left+=1
-                    while left<right and nums[right]==nums[right+1]:
+                        right-=1
+                        while left<right and  nums[left]==nums[left-1]:
+                            left+=1
+                        while left<right and  nums[right]==nums[right+1]:
+                            right-=1
+                        
+                    elif s<target:
+                        left+=1
+
+                    else:
                         right-=1
 
-                elif s<0:
-                    left+=1
-                else:
-                    right-=1
         return r
-                
-        
-
-
-        
 ```
 
 ---
