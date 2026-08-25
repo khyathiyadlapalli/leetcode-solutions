@@ -47,41 +47,24 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-25T15:48:50.066Z  
+**Runtime:** 520 ms (beats 28.04%)  
+**Memory:** 19.2 MB (beats 89.42%)  
+**Submitted:** 2026-08-25T15:48:57.121Z  
 
 ```py
 class Solution:
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        nums.sort()
-        r=[]
-        for i in range(len(nums)):
-            if i>0 and  nums[i]==nums[i-1]:
-                continue
-            for j in range(i+1,len(nums)):
-                if j>i+1 and nums[j]==nums[j-1]:
-                    continue
-                left=j+1
-                right=len(nums)-1
-                while left<right:
-                    s=nums[i]+nums[j]+nums[left]+nums[right]
-                    if s==target:
-                        r.append([nums[i],nums[j],nums[left],nums[right]])
-                        left+=1
-                        right-=1
-                        while left<right and  nums[left]==nums[left-1]:
-                            left+=1
-                        while left<right and  nums[right]==nums[right+1]:
-                            right-=1
-                        
-                    elif s<target:
-                        left+=1
+    def countQuadruplets(self, nums: List[int]) -> int:
+        count = 0
 
-                    else:
-                        right-=1
+        for a in range(len(nums)):
+            for b in range(a + 1, len(nums)):
+                for c in range(b + 1, len(nums)):
+                    for d in range(c + 1, len(nums)):
 
-        return r
+                        if nums[a] + nums[b] + nums[c] == nums[d]:
+                            count += 1
+
+        return count
 ```
 
 ---
