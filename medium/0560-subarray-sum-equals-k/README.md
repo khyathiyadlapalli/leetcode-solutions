@@ -27,24 +27,23 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-30T10:39:51.785Z  
+**Runtime:** 30 ms (beats 76.47%)  
+**Memory:** 21.8 MB (beats 56.34%)  
+**Submitted:** 2026-08-30T10:39:57.086Z  
 
 ```py
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        left=0
-        right=len(numbers)-1
-        while left<right:
-            s=numbers[left]+numbers[right]
-            if s== target:
-                return[left+1,right+1]
-            elif s<target:
-                left+=1
-            else:
-                right-=1
-
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        count=0
+        prefix=0
+        seen={0:1}
+        for num in nums:
+            prefix+=num
+            if prefix-k in seen:
+                count+=seen[prefix-k]
+            seen[prefix]=seen.get(prefix,0)+1
+        return count
+        
 ```
 
 ---
