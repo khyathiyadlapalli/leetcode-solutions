@@ -47,23 +47,18 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 3 ms (beats 79.70%)  
-**Memory:** 20.3 MB (beats 95.50%)  
-**Submitted:** 2026-08-30T09:54:47.410Z  
+**Runtime:** 0 ms  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-08-30T09:40:47.717Z  
 
 ```py
-class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        left=0
-        right=len(numbers)-1
-        while left<right:
-            s=numbers[left]+numbers[right]
-            if s== target:
-                return[left+1,right+1]
-            elif s<target:
-                left+=1
-            else:
-                right-=1
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        for i in range(1,len(numbers)):
+            for j in range(i+1,len(numbers)):
+                if numbers[i]+numbers[j]==target:
+                    return[i,j]
+        
 
 ```
 
