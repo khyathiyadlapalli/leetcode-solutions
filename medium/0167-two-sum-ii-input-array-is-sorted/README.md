@@ -48,15 +48,15 @@ Constraints:
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-30T09:40:05.116Z  
+**Memory:** 19.1 MB  
+**Submitted:** 2026-08-30T09:41:28.137Z  
 
 ```py
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         for i in range(len(numbers)-1):
             for j in range(i+1,len(numbers)-1):
-                if numbers[i]+numbers[j]==0:
+                if numbers[i]+numbers[j]==target:
                     return[i,j]
         
 
