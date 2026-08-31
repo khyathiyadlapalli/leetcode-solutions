@@ -30,20 +30,23 @@ Follow up: Could you minimize the total number of operations done?
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T06:55:03.991Z  
+**Runtime:** 1 ms (beats 88.74%)  
+**Memory:** 20.4 MB (beats 89.94%)  
+**Submitted:** 2026-08-31T06:55:09.684Z  
 
 ```py
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen = {}
-        for i, num in enumerate(nums):
-            complement = target - num
-            if complement in seen:
-                return [seen[complement], i]
-            seen[num] = i
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        slow=0
+        for fast in range(len(nums)):
+            if nums[fast]!=0:
+                nums[slow],nums[fast]=nums[fast],nums[slow]
+                slow+=1
 
+        return[nums]
 ```
 
 ---
