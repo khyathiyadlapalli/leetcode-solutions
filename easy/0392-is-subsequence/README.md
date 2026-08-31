@@ -31,19 +31,22 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T09:58:47.657Z  
+**Runtime:** 1 ms (beats 35.30%)  
+**Memory:** 19.1 MB (beats 92.19%)  
+**Submitted:** 2026-08-31T09:59:43.896Z  
 
 ```py
-        j=0
-        while i<len(s) and j<len(t):
-            if s[i]==t[j]:
-                i+=1
-            j+=1
-        
-            return True
-
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        i=0
+        j=0
+        while i<len(s) and j<len(t):
+            if s[i]==t[j]:
+                i+=1
+            j+=1
+        return i==len(s)
+        
+        
 ```
 
 ---
