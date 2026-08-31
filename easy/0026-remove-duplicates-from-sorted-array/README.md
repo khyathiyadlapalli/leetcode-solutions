@@ -55,29 +55,23 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T09:26:22.385Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 20.5 MB (beats 79.25%)  
+**Submitted:** 2026-08-31T09:26:28.521Z  
 
 ```py
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        i=m-1
-        j=n-1
-        k=n+m-1
-        while j>=0:
-            if i>=0 and nums1[i]>nums2[j]:
-                nums1[k]=nums1[i]
-                i-=1
-            else:
-                nums1[k]=nums2[j]
-                j-=1
-            k-=1
-        return nums1
-        
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        slow = 0
+
+        for fast in range(1, len(nums)):
+
+            if nums[fast] != nums[slow]:
+                slow += 1
+                nums[slow] = nums[fast]
+
+        return slow + 1
 ```
 
 ---
