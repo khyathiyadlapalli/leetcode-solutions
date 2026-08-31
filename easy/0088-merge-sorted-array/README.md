@@ -53,26 +53,28 @@ Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T09:14:21.760Z  
+**Runtime:** 3 ms (beats 6.31%)  
+**Memory:** 19.3 MB (beats 39.06%)  
+**Submitted:** 2026-08-31T09:15:45.836Z  
 
 ```py
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        left=0
-        right=len(s)-1
-        while left<right:
-            while left<right and not s[left].isalnum():
-                left+=1
-            while left<right and not s[right].isalnum():
-                right-=1
-            if s[left].lower()!=s[right].lower():
-                return False
-            left+=1
-            right-=1
-        return True
-
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        i=m-1
+        j=n-1
+        k=n+m-1
+        while j>=0:
+            if i>=0 and nums1[i]>nums2[j]:
+                nums1[k]=nums1[i]
+                i-=1
+            else:
+                nums1[k]=nums2[j]
+                j-=1
+            k-=1
+        return nums1
         
 ```
 
