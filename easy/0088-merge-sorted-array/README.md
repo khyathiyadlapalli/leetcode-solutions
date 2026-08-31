@@ -54,8 +54,8 @@ Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-08-31T09:12:23.764Z  
+**Memory:** 19.3 MB  
+**Submitted:** 2026-08-31T09:13:22.911Z  
 
 ```py
 class Solution:
