@@ -1,16 +1,18 @@
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        left=0
-        right=len(s)-1
-        while left<right:
-            while left<right and not s[left].isalnum():
-                left+=1
-            while left<right and not s[right].isalnum():
-                right-=1
-            if s[left].lower()!=s[right].lower():
-                return False
-            left+=1
-            right-=1
-        return True
-
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        i=m-1
+        j=n-1
+        k=n+m-1
+        while j>=0:
+            if j>=0 and nums1[i]<nums2[j]:
+                nums1[k]=nums2[j]
+                j-=1
+            else:
+                nums1[k]=nums1[i]
+                i-=1
+            k-=1
+        return nums1
         
