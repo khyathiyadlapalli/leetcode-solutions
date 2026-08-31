@@ -52,20 +52,15 @@ Follow up: Could you come up with a one-pass algorithm using only constant ext
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T10:16:25.979Z  
+**Submitted:** 2026-08-31T12:01:57.300Z  
 
 ```py
 class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        i=0
-        j=0
-        while i<len(s) and j<len(t):
-            if s[i]==t[j]:
-                i+=1
-            j+=1
-        return i==len(s)
-        
-        
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        return nums.sort()
 ```
 
 ---
