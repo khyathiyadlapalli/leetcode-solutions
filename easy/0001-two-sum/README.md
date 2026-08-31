@@ -46,22 +46,19 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comp
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T06:33:26.365Z  
+**Runtime:** 2 ms (beats 56.32%)  
+**Memory:** 20.4 MB (beats 58.67%)  
+**Submitted:** 2026-08-31T06:33:32.410Z  
 
 ```py
 class Solution:
-    def subarraySum(self, nums: List[int], k: int) -> int:
-        count=0
-        prefix=0
-        seen={0:1}
-        for num in nums:
-            prefix+=num
-            if prefix-k in seen:
-                count+=seen[prefix-k]
-            seen[prefix]=seen.get(prefix,0)+1
-        return count
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen={}
+        for i,num in enumerate(nums):
+            complement=target-num
+            if complement in seen:
+                return[seen[complement],i]
+            seen[num]=i
         
 ```
 
