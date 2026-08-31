@@ -46,20 +46,20 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comp
 ## Solution
 
 **Language:** Python  
-**Runtime:** 2 ms (beats 56.32%)  
+**Runtime:** 3 ms (beats 53.66%)  
 **Memory:** 20.4 MB (beats 58.67%)  
-**Submitted:** 2026-08-31T06:33:32.410Z  
+**Submitted:** 2026-08-31T06:36:32.065Z  
 
 ```py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen={}
-        for i,num in enumerate(nums):
-            complement=target-num
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
             if complement in seen:
-                return[seen[complement],i]
-            seen[num]=i
-        
+                return [seen[complement], i]
+            seen[num] = i
+
 ```
 
 ---
