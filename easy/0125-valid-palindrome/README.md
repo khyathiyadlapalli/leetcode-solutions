@@ -41,19 +41,26 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T07:28:55.970Z  
+**Runtime:** 7 ms (beats 81.13%)  
+**Memory:** 19.6 MB (beats 53.33%)  
+**Submitted:** 2026-08-31T07:29:00.653Z  
 
 ```py
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        left=0
+        right=len(s)-1
+        while left<right:
+            while left<right and not s[left].isalnum():
+                left+=1
+            while left<right and not s[right].isalnum():
+                right-=1
+            if s[left].lower()!=s[right].lower():
+                return False
+            left+=1
+            right-=1
+        return True
 
-        clean=""
-        for ch in s:
-            if ch.isalnum():
-                clean+=ch.lower()
-        return clean==clean[::-1]
         
 ```
 
