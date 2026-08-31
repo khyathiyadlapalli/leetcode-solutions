@@ -41,23 +41,20 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T07:12:19.312Z  
+**Runtime:** 10 ms (beats 36.34%)  
+**Memory:** 19.4 MB (beats 94.36%)  
+**Submitted:** 2026-08-31T07:12:24.341Z  
 
 ```py
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        slow=0
-        for fast in range(len(nums)):
-            if nums[fast]!=0:
-                nums[slow],nums[fast]=nums[fast],nums[slow]
-                slow+=1
+    def isPalindrome(self, s: str) -> bool:
 
-        return[nums]
+        clean=""
+        for ch in s:
+            if ch.isalnum():
+                clean+=ch.lower()
+        return clean==clean[::-1]
+        
 ```
 
 ---
