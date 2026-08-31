@@ -51,8 +51,8 @@ Follow up: Could you come up with a one-pass algorithm using only constant ext
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T12:01:57.300Z  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-08-31T12:02:26.002Z  
 
 ```py
 class Solution:
