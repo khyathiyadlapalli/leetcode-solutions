@@ -50,9 +50,9 @@ Follow up: Could you come up with a one-pass algorithm using only constant ext
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T12:02:26.002Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.3 MB (beats 62.52%)  
+**Submitted:** 2026-08-31T12:02:31.959Z  
 
 ```py
 class Solution:
@@ -60,7 +60,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        return nums.sort()
+        low=0
+        mid=0
+        hight=len(nums)-1
+        while mid<=hight:
+            if nums[mid]==0:
+                nums[low],nums[mid]=nums[mid],nums[low]
+                low+=1
+                mid+=1
+            elif nums[mid]==1:
+                mid+=1
+            else:
+                nums[mid],nums[hight]=nums[hight],nums[mid]
+                hight-=1
+                
+
 ```
 
 ---
