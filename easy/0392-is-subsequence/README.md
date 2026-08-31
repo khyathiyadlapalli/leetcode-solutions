@@ -32,17 +32,17 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T09:58:22.755Z  
+**Memory:** 19.4 MB  
+**Submitted:** 2026-08-31T09:59:38.566Z  
 
 ```py
         j=0
         while i<len(s) and j<len(t):
             if s[i]==t[j]:
-                i+1
+                i+=1
             j+=1
         
-        return True
+        return i==len(s)
 
 ```
 
