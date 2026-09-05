@@ -47,9 +47,9 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 ## Solution
 
 **Language:** Python  
-**Runtime:** 35 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-05T11:18:55.588Z  
+**Runtime:** 53 ms  
+**Memory:** 19.3 MB  
+**Submitted:** 2026-09-05T11:19:06.968Z  
 
 ```py
 class Solution:
