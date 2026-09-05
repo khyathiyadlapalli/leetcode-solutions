@@ -33,17 +33,46 @@ Follow up: Could you do it in O(n) time and O(1) space?
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-05T13:00:29.147Z  
+**Runtime:** 40 ms (beats 36.37%)  
+**Memory:** 42.6 MB (beats 54.09%)  
+**Submitted:** 2026-09-05T13:00:36.355Z  
 
 ```py
-            left=left.next
-            right=right.next
-        return True
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
 
-        
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next:
+            return True
 
+        slow=head
+        fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+        curr=slow
+        prev=None
+        while curr:
+            next_node=curr.next
+            curr.next=prev
+            prev=curr
+            curr=next_node
+
+        left=head
+        right=prev
+        while right:
+            if left.val!=right.val:
+                
+                return False
+            left=left.next
+            right=right.next
+        return True
+
+        
 ```
 
 ---
