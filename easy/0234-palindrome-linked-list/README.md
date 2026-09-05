@@ -35,16 +35,15 @@ Follow up: Could you do it in O(n) time and O(1) space?
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.2 MB  
-**Submitted:** 2026-09-05T12:57:18.793Z  
+**Submitted:** 2026-09-05T12:58:02.505Z  
 
 ```py
-                
-                    return False
-                left.next
-                if left.val!=right.val:
-            while right:
-            right=prev
-            left=head
+        fast=head
+        slow=head
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+
+        if not head or not head.next:
+            return True
 
 
 ```
