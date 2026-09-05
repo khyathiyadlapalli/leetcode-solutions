@@ -34,17 +34,18 @@ Follow up: Could you do it in O(n) time and O(1) space?
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-09-05T12:55:24.896Z  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-09-05T12:57:18.793Z  
 
 ```py
-            while right:
-                if left.val!=right.val:
                 
                     return False
-            return True
                 left.next
-                right.next
+                if left.val!=right.val:
+            while right:
+            right=prev
+            left=head
+
 
 ```
 
