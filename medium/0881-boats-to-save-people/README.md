@@ -40,31 +40,24 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-05T06:38:13.664Z  
+**Runtime:** 54 ms (beats 33.77%)  
+**Memory:** 25.3 MB (beats 17.45%)  
+**Submitted:** 2026-09-05T06:38:18.677Z  
 
 ```py
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        low=0
-        mid=0
-        hight=len(nums)-1
-        while mid<=hight:
-            if nums[mid]==0:
-                nums[low],nums[mid]=nums[mid],nums[low]
-                low+=1
-                mid+=1
-            elif nums[mid]==1:
-                mid+=1
-            else:
-                nums[mid],nums[hight]=nums[hight],nums[mid]
-                hight-=1
-                
-
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        people.sort()
+        left=0
+        right=len(people)-1
+        boats=0
+        while left<=right:
+            if people[left]+people[right]<=limit:
+                left+=1
+            right-=1
+            boats+=1
+        return boats
+        
 ```
 
 ---
