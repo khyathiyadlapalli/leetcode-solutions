@@ -1,8 +1,19 @@
 class Solution:
-    def rotate(self, nums: list[int], k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        k = k % len(nums)
-        nums[:] = nums[-k:] + nums[:-k]
-        return nums
+    def compress(self, chars: List[str]) -> int:
+        read=0
+        write=0
+        while read<len(chars):
+            current= chars[read]
+            count=0
+            while read<len(chars) and chars[read]==current:
+                read+=1
+                count+=1
+
+            chars[write]=current
+            write+=1
+
+            if count>1:
+                for digit in str(count):
+                    chars[write]=digit
+                    write+=1
+        return write
