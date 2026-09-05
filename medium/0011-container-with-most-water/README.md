@@ -37,18 +37,27 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-09-05T09:43:31.799Z  
+**Runtime:** 61 ms (beats 34.33%)  
+**Memory:** 29.6 MB (beats 67.81%)  
+**Submitted:** 2026-09-05T09:43:37.033Z  
 
 ```py
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left=0
+        right=len(height)-1
+        max_area=0
+        while left<right:
+            width=right-left
+            h=min(height[left],height[right])
+            area=width*h
+            max_area=max(area,max_area)
 
-            if height[left]<height[right]:
-                left+=1
-            else:
-                right-=1
-        return max_area
-
+            if height[left]<height[right]:
+                left+=1
+            else:
+                right-=1
+        return max_area
 ```
 
 ---
