@@ -1,7 +1,8 @@
-            while right:
-                if left.val!=right.val:
                 
                     return False
-            return True
                 left.next
-                right.next
+                if left.val!=right.val:
+            while right:
+            right=prev
+            left=head
+
