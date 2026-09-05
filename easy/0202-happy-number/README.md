@@ -43,26 +43,22 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-09-05T13:15:50.201Z  
+**Runtime:** 3 ms (beats 33.17%)  
+**Memory:** 19.3 MB (beats 25.37%)  
+**Submitted:** 2026-09-05T13:15:55.332Z  
 
 ```py
 class Solution:
     def isHappy(self, n: int) -> bool:
 
         slow = n
-        fast = n
+        fast = self.getNext(n)
 
-        while fast != 1:
-
+        while slow != fast:
             slow = self.getNext(slow)
             fast = self.getNext(self.getNext(fast))
 
-            if slow == fast:
-                return False
-
-        return True
+        return slow == 1
 
     def getNext(self, n):
         total = 0
@@ -70,7 +66,7 @@ class Solution:
         while n > 0:
             digit = n % 10
             total += digit * digit
-            n = n // 10
+            n //= 10
 
         return total
 ```
