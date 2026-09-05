@@ -38,9 +38,9 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 400 ms (beats 49.61%)  
-**Memory:** 19.2 MB (beats 86.13%)  
-**Submitted:** 2026-08-23T10:12:28.913Z  
+**Runtime:** 406 ms (beats 35.10%)  
+**Memory:** 19.5 MB (beats 7.49%)  
+**Submitted:** 2026-09-05T09:26:56.883Z  
 
 ```py
 class Solution:
