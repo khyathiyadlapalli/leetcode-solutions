@@ -46,8 +46,8 @@ Follow up:
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-09-05T07:54:51.333Z  
+**Memory:** 19.6 MB  
+**Submitted:** 2026-09-05T07:51:34.751Z  
 
 ```py
 class Solution:
