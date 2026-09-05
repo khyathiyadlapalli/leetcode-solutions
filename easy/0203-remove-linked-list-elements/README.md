@@ -36,32 +36,26 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-09-05T13:20:58.043Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 22.2 MB (beats 92.40%)  
+**Submitted:** 2026-09-05T13:21:03.560Z  
 
 ```py
 class Solution:
-    def isHappy(self, n: int) -> bool:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
 
-        slow = n
-        fast = self.getNext(n)
+        dummy = ListNode(0)
+        dummy.next = head
 
-        while slow != fast:
-            slow = self.getNext(slow)
-            fast = self.getNext(self.getNext(fast))
+        curr = dummy
 
-        return slow == 1
+        while curr.next:
+            if curr.next.val == val:
+                curr.next = curr.next.next
+            else:
+                curr = curr.next
 
-    def getNext(self, n):
-        total = 0
-
-        while n > 0:
-            digit = n % 10
-            total += digit * digit
-            n //= 10
-
-        return total
+        return dummy.next
 ```
 
 ---
