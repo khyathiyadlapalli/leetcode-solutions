@@ -33,27 +33,25 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-09-05T11:40:04.306Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.3 MB (beats 59.33%)  
+**Submitted:** 2026-09-05T11:41:09.849Z  
 
 ```py
 # Definition for singly-linked list.
 # class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast = head
+
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow=head
+        fast =head
         while fast and fast.next:
             slow=slow.next
             fast=fast.next.next
-            if slow==fast:
-                return True
-        return False
+        return slow
         
 ```
 
