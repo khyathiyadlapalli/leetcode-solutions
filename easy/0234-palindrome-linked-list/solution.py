@@ -1,8 +1,7 @@
-                
-                    return False
-                left.next
-                if left.val!=right.val:
-            while right:
-            right=prev
-            left=head
+        fast=head
+        slow=head
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+
+        if not head or not head.next:
+            return True
 
