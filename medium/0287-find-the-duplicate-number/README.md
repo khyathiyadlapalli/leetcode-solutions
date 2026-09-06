@@ -50,7 +50,7 @@ Follow up:
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-09-06T04:08:21.068Z  
+**Submitted:** 2026-09-06T04:11:35.482Z  
 
 ```py
 class Solution:
