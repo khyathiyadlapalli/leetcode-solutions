@@ -62,26 +62,23 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-09-06T02:58:24.314Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.2 MB (beats 57.33%)  
+**Submitted:** 2026-09-06T02:58:29.562Z  
 
 ```py
 class Solution:
-    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        nums.sort()
+        slow=0
+        for fast in range(len(nums)):
+            if nums[fast]!=val:
+                nums[slow]=nums[fast]
+                slow+=1
+        return slow
 
-        dummy = ListNode(0)
-        dummy.next = head
-
-        curr = dummy
-
-        while curr.next:
-            if curr.next.val == val:
-                curr.next = curr.next.next
-            else:
-                curr = curr.next
-
-        return dummy.next
+        
+        
 ```
 
 ---
